@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.redAccent[100],
+        backgroundColor: Colors.redAccent,
         onPressed: () {
           Navigator.pushReplacement(
             context,

@@ -27,8 +27,11 @@ class _addnoteState extends State<addnote> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add Todos"),
-        backgroundColor: Colors.indigo[900],
+        title: Text("Add Todos d",
+          style: TextStyle(
+            color: Colors.black),
+        ),
+        backgroundColor: Colors.yellowAccent,
       ),
       body: Container(
         child: Column(
