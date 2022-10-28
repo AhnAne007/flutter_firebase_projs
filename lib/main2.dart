@@ -3,7 +3,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
-
 import 'addnote.dart';
 
 void main() async {
@@ -130,7 +129,7 @@ class _HomeState extends State<Home> {
                     ),
                     MaterialButton(
                       onPressed: () async {
-                        await upd();
+                        await updateData();
                         Navigator.of(ctx).pop();
                       },
                       color: Color.fromARGB(255, 0, 22, 145),
@@ -191,7 +190,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  upd() async {
+  updateData() async {
     DatabaseReference ref1 = FirebaseDatabase.instance.ref("todos/$k");
 
 // Only update the name, leave the age and address!

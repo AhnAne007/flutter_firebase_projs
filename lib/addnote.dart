@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'main2.dart';
 
@@ -69,6 +70,19 @@ class _addnoteState extends State<addnote> {
                 ref.set({
                   "title": second.text,
                   "subtitle": third.text,
+                }).onError((error, stackTrace) {
+                  print("error:$error");
+                }
+                ).then((value) {
+                  Fluttertoast.showToast(
+                      msg: "Data Added",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.CENTER,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.red,
+                      textColor: Colors.white,
+                      fontSize: 16.0
+                  );
                 }).asStream();
                 Navigator.pushReplacement(
                     context, MaterialPageRoute(builder: (_) => Home()));
