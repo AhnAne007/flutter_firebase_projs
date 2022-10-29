@@ -77,13 +77,13 @@ class _HomeState extends State<Home> {
         shrinkWrap: true,
         itemBuilder: (context, snapshot, animation, index) {
           var v =
-          snapshot.value.toString(); // {subtitle: webfun, title: subscribe}
+          snapshot.value.toString();
 
           g = v.replaceAll(
-              RegExp("{|}|subtitle: |title: "), ""); // webfun, subscribe
+              RegExp("{|}|subtitle: |title: "), "");
           g.trim();
 
-          l = g.split(','); // [webfun,  subscribe}]
+          l = g.split(',');
 
           return GestureDetector(
             onTap: () {
